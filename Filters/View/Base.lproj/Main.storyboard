@@ -26,7 +26,7 @@
                                 <rect key="frame" x="72.5" y="473.5" width="230" height="50"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="NvA-ew-5Nu"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="NvA-ew-5Nu"/>
                                     <constraint firstAttribute="height" constant="50" id="sPY-Ya-wYH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -47,7 +47,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="I6B-BY-7W7"/>
-                                    <constraint firstAttribute="width" constant="230" id="r62-H1-BYj"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="r62-H1-BYj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="PHOTO LIBRARY">
@@ -75,7 +75,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="0RD-ld-QRe" kind="presentation" identifier="FilterPage" modalPresentationStyle="fullScreen" id="IqV-OQ-wAQ"/>
+                        <segue destination="0RD-ld-QRe" kind="presentation" identifier="FilterPage" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="IqV-OQ-wAQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -85,17 +85,16 @@
         <!--Editing View Controller-->
         <scene sceneID="aUs-i5-Jwt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6XG-9N-cJC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="0RD-ld-QRe" customClass="EditingViewController" customModule="Filters" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bzy-xf-M6w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eOH-vm-zLG" userLabel="BackgroundImage">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ycE-wo-GzX">
-                                <rect key="frame" x="20" y="70" width="335" height="500"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="Frf-GG-a06"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="70" width="335" height="432"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19p-pf-itB" userLabel="BackButton">
                                 <rect key="frame" x="20" y="24.5" width="40" height="39"/>
@@ -105,6 +104,9 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" backgroundImage="arrow.left.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="0RD-ld-QRe" eventType="touchUpInside" id="rBw-II-AlI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UR-47-kXO" userLabel="DoneButton">
                                 <rect key="frame" x="313" y="24.5" width="42" height="39"/>
@@ -115,36 +117,51 @@
                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <state key="normal" backgroundImage="checkmark.circle.fill" catalog="system"/>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Pop-zN-bcj" userLabel="FilterStack">
-                                <rect key="frame" x="20" y="422" width="335" height="235"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Pop-zN-bcj" userLabel="FilterStack">
+                                <rect key="frame" x="20" y="512" width="335" height="145"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="90x-Ay-NZe" userLabel="FilterOptionsTableView">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="92"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </tableView>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gfF-O6-yYN" userLabel="FilterColletionView">
-                                        <rect key="frame" x="0.0" y="92" width="335" height="105"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kot-66-Rhp">
-                                            <size key="itemSize" width="95" height="110"/>
+                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gfF-O6-yYN" userLabel="FilterColletionView">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="98"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kot-66-Rhp">
+                                            <size key="itemSize" width="95" height="103"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filterCell" id="iiI-i9-W1J">
-                                                <rect key="frame" x="0.0" y="0.0" width="95" height="110"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FilterCell" id="tea-Ku-Ub6" customClass="FilterCell" customModule="Filters" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="-2" width="102" height="102"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="p76-2S-Z7y">
-                                                    <rect key="frame" x="0.0" y="0.0" width="95" height="110"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8vL-QH-o9h">
+                                                    <rect key="frame" x="0.0" y="0.0" width="102" height="102"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="saM-2D-WTV" userLabel="FilterNameLabel">
+                                                            <rect key="frame" x="0.0" y="0.0" width="102" height="102"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="102" id="suu-pU-Zzr"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="saM-2D-WTV" firstAttribute="leading" secondItem="8vL-QH-o9h" secondAttribute="leading" id="34U-7R-hc1"/>
+                                                        <constraint firstItem="saM-2D-WTV" firstAttribute="top" secondItem="8vL-QH-o9h" secondAttribute="top" id="3qv-IO-EJr"/>
+                                                        <constraint firstAttribute="bottom" secondItem="saM-2D-WTV" secondAttribute="bottom" id="MIN-09-0HI"/>
+                                                        <constraint firstAttribute="trailing" secondItem="saM-2D-WTV" secondAttribute="trailing" id="xSH-bu-3HR"/>
+                                                    </constraints>
                                                 </collectionViewCellContentView>
-                                                <size key="customSize" width="95" height="110"/>
+                                                <size key="customSize" width="102" height="102"/>
+                                                <connections>
+                                                    <outlet property="filterName" destination="saM-2D-WTV" id="AG5-74-9Rs"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu7-Nh-CSM">
-                                        <rect key="frame" x="0.0" y="197" width="335" height="38"/>
+                                        <rect key="frame" x="0.0" y="107" width="335" height="38"/>
                                         <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Apply">
@@ -155,32 +172,46 @@
                                                 <integer key="value" value="8"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="applyFilterPressed:" destination="0RD-ld-QRe" eventType="touchUpInside" id="Auy-pC-Xyd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="82d-Vm-8JI"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Pop-zN-bcj" firstAttribute="leading" secondItem="OFg-pO-WBR" secondAttribute="leading" constant="20" id="0mP-d8-bCf"/>
-                            <constraint firstItem="ycE-wo-GzX" firstAttribute="top" secondItem="OFg-pO-WBR" secondAttribute="top" constant="70" id="3np-ST-LIT"/>
+                            <constraint firstItem="OFg-pO-WBR" firstAttribute="trailing" secondItem="ycE-wo-GzX" secondAttribute="trailing" constant="20" id="5dR-vK-QL9"/>
+                            <constraint firstItem="ycE-wo-GzX" firstAttribute="top" secondItem="19p-pf-itB" secondAttribute="bottom" constant="6" id="Ftb-w9-6Dt"/>
+                            <constraint firstItem="eOH-vm-zLG" firstAttribute="leading" secondItem="Bzy-xf-M6w" secondAttribute="leading" id="N80-Sx-ECM"/>
+                            <constraint firstItem="Pop-zN-bcj" firstAttribute="top" secondItem="ycE-wo-GzX" secondAttribute="bottom" constant="10" id="PHl-H2-b28"/>
                             <constraint firstItem="OFg-pO-WBR" firstAttribute="trailing" secondItem="2UR-47-kXO" secondAttribute="trailing" constant="20" id="QtY-tt-JOM"/>
                             <constraint firstItem="OFg-pO-WBR" firstAttribute="trailing" secondItem="Pop-zN-bcj" secondAttribute="trailing" constant="20" id="ZRs-n2-0UV"/>
                             <constraint firstItem="19p-pf-itB" firstAttribute="leading" secondItem="OFg-pO-WBR" secondAttribute="leading" constant="20" id="b4u-43-PUB"/>
-                            <constraint firstItem="OFg-pO-WBR" firstAttribute="trailing" secondItem="ycE-wo-GzX" secondAttribute="trailing" constant="20" id="bN4-WV-Bjx"/>
                             <constraint firstItem="2UR-47-kXO" firstAttribute="top" secondItem="OFg-pO-WBR" secondAttribute="top" constant="24" id="i4u-BH-qR9"/>
                             <constraint firstItem="OFg-pO-WBR" firstAttribute="bottom" secondItem="Pop-zN-bcj" secondAttribute="bottom" constant="10" id="juk-SD-9Lj"/>
+                            <constraint firstAttribute="bottom" secondItem="eOH-vm-zLG" secondAttribute="bottom" id="mSg-Sh-Fmm"/>
                             <constraint firstItem="19p-pf-itB" firstAttribute="top" secondItem="OFg-pO-WBR" secondAttribute="top" constant="24" id="mmz-2b-Zj1"/>
-                            <constraint firstItem="ycE-wo-GzX" firstAttribute="leading" secondItem="OFg-pO-WBR" secondAttribute="leading" constant="20" id="tkt-k5-bAb"/>
+                            <constraint firstItem="ycE-wo-GzX" firstAttribute="leading" secondItem="OFg-pO-WBR" secondAttribute="leading" constant="20" id="qMN-eb-ONg"/>
+                            <constraint firstItem="eOH-vm-zLG" firstAttribute="top" secondItem="Bzy-xf-M6w" secondAttribute="top" id="yB5-aa-dKO"/>
+                            <constraint firstItem="eOH-vm-zLG" firstAttribute="trailing" secondItem="Bzy-xf-M6w" secondAttribute="trailing" id="yyU-xI-sck"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OFg-pO-WBR"/>
                     </view>
                     <navigationItem key="navigationItem" id="mKc-rQ-AZZ"/>
                     <connections>
+                        <outlet property="backgroundImage" destination="eOH-vm-zLG" id="VBf-lK-Bha"/>
                         <outlet property="editImageView" destination="ycE-wo-GzX" id="DQ0-yY-5VC"/>
+                        <outlet property="filterCollectionView" destination="gfF-O6-yYN" id="sda-YK-U4X"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6XG-9N-cJC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="876.81159420289862" y="99.776785714285708"/>
+            <point key="canvasLocation" x="874.39999999999998" y="99.01477832512316"/>
         </scene>
     </scenes>
     <resources>

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  EditingViewController.swift
 //  Filters
 //
 //  Created by Asaduzzaman Anik on 6/23/20.
@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class EditingViewController: UIViewController {
+   
+    @IBOutlet weak var editImageView: UIImageView!
+    var image: UIImage!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        editImageView.image = image
     }
-
-
 }
-

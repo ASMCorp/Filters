@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Filters" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FILTERS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Itp-sJ-1Zr" userLabel="FilterLabel">
+                                <rect key="frame" x="91" y="216" width="232" height="64"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="50"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGZ-LF-DgV">
+                                <rect key="frame" x="92" y="588" width="230" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="NvA-ew-5Nu"/>
+                                    <constraint firstAttribute="height" constant="50" id="sPY-Ya-wYH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="CAMERA">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cameraOrLibraryButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fal-1a-yBt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x67-vB-toh">
+                                <rect key="frame" x="92" y="678" width="230" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="I6B-BY-7W7"/>
+                                    <constraint firstAttribute="width" constant="230" id="r62-H1-BYj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="PHOTO LIBRARY">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cameraOrLibraryButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1MO-41-M2h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="x67-vB-toh" firstAttribute="top" secondItem="TGZ-LF-DgV" secondAttribute="bottom" constant="40" id="5Md-OK-t3E"/>
+                            <constraint firstItem="Itp-sJ-1Zr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FdL-na-NP0"/>
+                            <constraint firstItem="TGZ-LF-DgV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="165" id="Q3r-RW-18x"/>
+                            <constraint firstItem="Itp-sJ-1Zr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-200" id="W5l-zv-Pta"/>
+                            <constraint firstItem="x67-vB-toh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ip4-JE-riu"/>
+                            <constraint firstItem="TGZ-LF-DgV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qbR-b7-MDh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="0RD-ld-QRe" kind="presentation" identifier="FilterPage" modalPresentationStyle="fullScreen" id="IqV-OQ-wAQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="106.47321428571428"/>
+        </scene>
+        <!--Editing View Controller-->
+        <scene sceneID="aUs-i5-Jwt">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6XG-9N-cJC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="0RD-ld-QRe" customClass="EditingViewController" customModule="Filters" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bzy-xf-M6w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ycE-wo-GzX">
+                                <rect key="frame" x="20" y="114" width="374" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="Frf-GG-a06"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19p-pf-itB" userLabel="BackButton">
+                                <rect key="frame" x="20" y="68.5" width="40" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fy6-gv-S75"/>
+                                    <constraint firstAttribute="width" constant="40" id="sD2-EX-voq"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" backgroundImage="arrow.left.circle.fill" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UR-47-kXO" userLabel="DoneButton">
+                                <rect key="frame" x="352" y="68.5" width="42" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="5q0-ZU-RaM"/>
+                                    <constraint firstAttribute="height" constant="40" id="iyz-Kc-JYw"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" backgroundImage="checkmark.circle.fill" catalog="system"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Pop-zN-bcj" userLabel="FilterStack">
+                                <rect key="frame" x="20" y="627" width="374" height="235"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="90x-Ay-NZe" userLabel="FilterOptionsTableView">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="92"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </tableView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gfF-O6-yYN" userLabel="FilterColletionView">
+                                        <rect key="frame" x="0.0" y="92" width="374" height="105"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kot-66-Rhp">
+                                            <size key="itemSize" width="95" height="110"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="iiI-i9-W1J">
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="110"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="p76-2S-Z7y">
+                                                    <rect key="frame" x="0.0" y="0.0" width="95" height="110"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="95" height="110"/>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu7-Nh-CSM">
+                                        <rect key="frame" x="0.0" y="197" width="374" height="38"/>
+                                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="Apply">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Pop-zN-bcj" firstAttribute="leading" secondItem="OFg-pO-WBR" secondAttribute="leading" constant="20" id="0mP-d8-bCf"/>
+                            <constraint firstItem="ycE-wo-GzX" firstAttribute="top" secondItem="OFg-pO-WBR" secondAttribute="top" constant="70" id="3np-ST-LIT"/>
+                            <constraint firstItem="OFg-pO-WBR" firstAttribute="trailing" secondItem="2UR-47-kXO" secondAttribute="trailing" constant="20" id="QtY-tt-JOM"/>
+                            <constraint firstItem="OFg-pO-WBR" firstAttribute="trailing" secondItem="Pop-zN-bcj" secondAttribute="trailing" constant="20" id="ZRs-n2-0UV"/>
+                            <constraint firstItem="19p-pf-itB" firstAttribute="leading" secondItem="OFg-pO-WBR" secondAttribute="leading" constant="20" id="b4u-43-PUB"/>
+                            <constraint firstItem="OFg-pO-WBR" firstAttribute="trailing" secondItem="ycE-wo-GzX" secondAttribute="trailing" constant="20" id="bN4-WV-Bjx"/>
+                            <constraint firstItem="2UR-47-kXO" firstAttribute="top" secondItem="OFg-pO-WBR" secondAttribute="top" constant="24" id="i4u-BH-qR9"/>
+                            <constraint firstItem="OFg-pO-WBR" firstAttribute="bottom" secondItem="Pop-zN-bcj" secondAttribute="bottom" id="juk-SD-9Lj"/>
+                            <constraint firstItem="19p-pf-itB" firstAttribute="top" secondItem="OFg-pO-WBR" secondAttribute="top" constant="24" id="mmz-2b-Zj1"/>
+                            <constraint firstItem="ycE-wo-GzX" firstAttribute="leading" secondItem="OFg-pO-WBR" secondAttribute="leading" constant="20" id="tkt-k5-bAb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OFg-pO-WBR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mKc-rQ-AZZ"/>
+                    <connections>
+                        <outlet property="editImageView" destination="ycE-wo-GzX" id="DQ0-yY-5VC"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="876.81159420289862" y="99.776785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.left.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="checkmark.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
+</document>
